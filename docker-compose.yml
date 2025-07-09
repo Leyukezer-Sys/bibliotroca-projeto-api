@@ -1,0 +1,14 @@
+services:
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - MYSQL_DATABASE=bd_bibliotroca
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - '3309:3306'
+    volumes:
+      - data-db:/var/lib/mysql
+
+volumes:
+  data-db:
