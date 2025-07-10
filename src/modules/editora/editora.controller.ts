@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { EditoraService } from './editora.service';
 import { CreateEditoraDto } from './dto/create-editora.dto';

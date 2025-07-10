@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Cidade } from '../cidade/entities/cidade.entity';
 import { CreateUsuarioDto } from './dto/create-usuario.dto';
 import { UpdateUsuarioDto } from './dto/update-usuario.dto';
-import { Usuario } from './usuario.entity';
+import { Usuario } from './entities/usuario.entity';
 
 @Injectable()
 export class UsuarioService {

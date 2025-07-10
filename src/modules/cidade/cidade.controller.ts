@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { CidadeService } from './cidade.service';
 import { CreateCidadeDto } from './dto/create-cidade.dto';

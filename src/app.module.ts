@@ -9,6 +9,7 @@ import { CidadeModule } from './modules/cidade/cidade.module';
 import { EstadoModule } from './modules/estado/estado.module';
 import { GeneroModule } from './modules/genero/genero.module';
 import { EditoraModule } from './modules/editora/editora.module';
+import { LivroModule } from './modules/livro/livro.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { EditoraModule } from './modules/editora/editora.module';
     AutorModule,
     GeneroModule,
     EditoraModule,
+    LivroModule,
   ],
   controllers: [AppController],
   providers: [],

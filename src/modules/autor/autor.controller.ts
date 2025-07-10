@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { AutorService } from './autor.service';
 import { CreateAutorDto } from './dto/create-autor.dto';

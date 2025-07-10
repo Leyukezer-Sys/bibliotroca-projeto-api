@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Estado } from "src/modules/estado/entities/estado.entity";
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 

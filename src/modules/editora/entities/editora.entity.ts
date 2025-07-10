@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('editora')

@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Estado } from '../estado/entities/estado.entity';
 import { CreateCidadeDto } from './dto/create-cidade.dto';

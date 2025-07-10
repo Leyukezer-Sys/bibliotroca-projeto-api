@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Type } from "class-transformer";
 import { IsEmail, IsNotEmpty, IsObject, MinLength, ValidateNested } from "class-validator";
 import { IdDto } from "src/common/dtos/id.dto";
