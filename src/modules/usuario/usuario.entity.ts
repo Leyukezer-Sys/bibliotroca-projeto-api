@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-import { Cidade } from "../cidade/cidade.entity";
+import { Cidade } from "../cidade/entities/cidade.entity";
 
 @Entity('usuario')
 export class Usuario extends BaseEntity{

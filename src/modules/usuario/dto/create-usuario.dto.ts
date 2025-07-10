@@ -22,7 +22,7 @@ export class CreateUsuarioDto {
     @IsNotEmpty({ message: 'A cidade é Obrigatória!'})
     @IsObject({
         each: true,
-        message: 'O atributo campus` deve ser um objeto',
+        message: 'O atributo cidade deve ser um objeto',
       })
     @ValidateNested({ each: true })
     @Type(() => IdDto)
