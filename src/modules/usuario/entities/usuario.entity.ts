@@ -16,7 +16,7 @@ export class Usuario extends BaseEntity{
     @Column({name:'contato_usu'})
     contato: string;
 
-    @Column({name:'admin'})
+    @Column({name:'admin_usu'})
     admin: boolean;
 
     @Column({name:'senha_usu'})
