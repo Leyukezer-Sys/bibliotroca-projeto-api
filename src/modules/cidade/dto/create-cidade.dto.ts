@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Type } from "class-transformer";
 import { IsNotEmpty, IsObject, MinLength, ValidateNested } from "class-validator";
 import { IdDto } from "src/common/dtos/id.dto";
@@ -10,7 +11,7 @@ export class CreateCidadeDto {
     @IsNotEmpty({message: 'O estado é obrigatório!'})
     @IsObject({
         each: true,
-        message: 'O atributo cidade deve ser um objeto'
+        message: 'O atributo estado deve ser um objeto'
     })
     @ValidateNested({each: true})
     @Type(() => IdDto)

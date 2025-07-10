@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { CreateEstadoDto } from './dto/create-estado.dto';
 import { UpdateEstadoDto } from './dto/update-estado.dto';
@@ -20,7 +21,7 @@ export class EstadoService {
   }
 
   async create(data: CreateEstadoDto) {
-    const estado = await this.create({ ...data });
+    const estado = Estado.create({ ...data });
 
     return await estado.save();
   }
@@ -35,7 +36,11 @@ export class EstadoService {
     return await Estado.update(id, {...data});
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} estado`;
+  async remove(id: number) {
+    const estado = await this.findOneById(id);
+    if (!estado) {
+      throw new NotFoundException('Estado não encontrado') 
+    }
+    return await Estado.delete(id);
   }
 }

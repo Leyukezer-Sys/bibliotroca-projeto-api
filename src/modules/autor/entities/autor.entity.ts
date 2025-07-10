@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
-import { BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity('autor')
-export class Usuario extends BaseEntity{
+export class Autor extends BaseEntity{
     @PrimaryGeneratedColumn({name: 'id_aut'})
     id!:number;
 
@@ -13,11 +13,11 @@ export class Usuario extends BaseEntity{
     email: string;
 
     @Column({name:'imagem_aut'})
-    contato: string;
+    imagem: string;
 
     @Column({name:'dataNascimento_aut'})
-    admin: Date;
+    dataNascimento: Date;
 
-    @Column({name:'biografia'})
-    senha: string;
+    @Column()
+    biografia: string;
 }

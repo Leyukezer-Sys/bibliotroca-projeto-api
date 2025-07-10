@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { Estado } from '../estado/entities/estado.entity';
 import { CreateCidadeDto } from './dto/create-cidade.dto';
@@ -29,14 +30,42 @@ export class CidadeService {
   async create(data: CreateCidadeDto){
     const { estado } = data;
 
-    const _estado = await Estado.findOne({where: id: estado.id});
+    const _estado = await Estado.findOne({where: { id: estado.id}});
+
+    if (!_estado) {
+      throw new NotFoundException('O estado informado não foi encontrado');
+    }
+
+    const cidade = Cidade.create({...data });
+
+    return cidade.save();
   }
 
-  update(id: number, updateCidadeDto: UpdateCidadeDto) {
-    return `This action updates a #${id} cidade`;
+  async update(id: number, data: UpdateCidadeDto) {
+    const { estado } = data;
+
+    const _estado = await Estado.findOne({where: { id: estado?.id}});
+
+    if (!_estado) {
+      throw new NotFoundException('O estado informado não foi encontrado');
+    }
+
+    const cidade = await this.findOneById(id);
+
+    if (!cidade) {
+      throw new NotFoundException('Cidade não encontrada!');
+    }
+
+    return await Cidade.update(id, {...data});
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} cidade`;
+  async remove(id: number) {
+    const cidade = await this.findOneById(id);
+
+    if (!cidade) {
+      throw new NotFoundException('Cidade não encontrada!');
+    }
+
+    return await Cidade.delete(id);
   }
 }
