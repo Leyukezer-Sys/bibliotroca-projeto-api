@@ -25,4 +25,4 @@ import { LivroModule } from './modules/livro/livro.module';
   controllers: [AppController],
   providers: [],
 })
-export class AppModule {}
+export class AppModule { }
