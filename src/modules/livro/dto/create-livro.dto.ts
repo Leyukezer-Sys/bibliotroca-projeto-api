@@ -27,4 +27,13 @@ export class CreateLivroDto {
     @ValidateNested({ each: true })
     @Type(() => IdDto)
     autor: IdDto;
+
+    @IsNotEmpty({ message: 'O Usuario é Obrigatório!'})
+    @IsObject({
+        each: true,
+        message: 'O atributo usuario deve ser um objeto',
+      })
+    @ValidateNested({ each: true })
+    @Type(() => IdDto)
+    usuario: IdDto;
 }
