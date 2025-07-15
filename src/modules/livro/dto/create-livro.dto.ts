@@ -19,7 +19,7 @@ export class CreateLivroDto {
     @Type(() => IdDto)
     editora: IdDto;
 
-    @IsNotEmpty({ message: 'O Autor é Obrigatória!'})
+    @IsNotEmpty({ message: 'O Autor é Obrigatório!'})
     @IsObject({
         each: true,
         message: 'O atributo autor deve ser um objeto',
