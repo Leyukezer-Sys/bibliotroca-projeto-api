@@ -1,5 +1,5 @@
 import { Type } from "class-transformer";
-import { IsEmail, IsNotEmpty, IsObject, MinLength, ValidateNested } from "class-validator";
+import { IsEmail, IsNotEmpty, IsObject, IsOptional, MinLength, ValidateNested } from "class-validator";
 import { IdDto } from "src/common/dtos/id.dto";
 
 export class CreateUsuarioDto {
@@ -23,4 +23,10 @@ export class CreateUsuarioDto {
   @ValidateNested({ each: true })
   @Type(() => IdDto)
   cidade: IdDto;
+
+  @IsOptional()
+  contato?: string;
+  
+  @IsOptional()
+  avaliacao?: number;
 }
